@@ -73,8 +73,13 @@ yargs.parse(process.argv.slice(2), (err, argv, output) => {
 
   // initialize the gutendocs API
   if (argv.init) {
-    const folderName = argv.init === true ? 'GutenApi/' : argv.init.concat('/');
-    generateAPIFrame('./', folderName);
+    if (pathData !== false) {
+      /* eslint-disable-next-line no-console */
+      console.log('You have not initialized gutendocs.  Call "gutendocs --init"');
+    } else {
+      const folderName = argv.init === true ? 'GutenApi/' : argv.init.concat('/');
+      generateAPIFrame('./', folderName);
+    }
   }
 
   // output the npm info for the package
