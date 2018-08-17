@@ -11,6 +11,4 @@ package-lock.json
 .DS_Store
 
 #files
-bundle.js
-*.bundle.js
 outputFromTest.js
